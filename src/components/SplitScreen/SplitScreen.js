@@ -5,11 +5,11 @@ import { Box, Divider } from '@mui/material';
 const SplitScreen = ({ leftPane, RightPane }) => {
 	return (
 		<Box className={styles.splitScreen}>
-			<Box className={`${styles.leftPane} ${styles.height}`  }>
+			<Box  className={`${styles.leftPane} ${styles.height}`  }>
 				{leftPane}
 			</Box>
 			<Divider />
-			<Box className={`${styles.RightPane} ${styles.height}`}>
+			<Box data-testid="right-pane" className={`${styles.RightPane} ${styles.height}`}>
 				{RightPane}
 			</Box>
 		</Box>

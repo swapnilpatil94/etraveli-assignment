@@ -5,12 +5,13 @@ const Loader = ({ loading }) => {
     <Backdrop
       sx={{ color: '#ffff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={loading}
+       data-testid="backdrop"
     >
       <Box display={'flex'} flexDirection={'column'} justifyContent='center' >
-        <Typography variant='h6' color={'gold'}>
+        <Typography variant='h6' color={'gold'}  data-testid="typography" >
           Welcome to Movie List Application..
         </Typography>
-        <CircularProgress style={{ margin: '2vw 8vw' }} color="inherit" />
+        <CircularProgress  data-testid="circular-progress" style={{ margin: '2vw 8vw' }} color="inherit" />
       </Box>
     </Backdrop>
   )

@@ -1,4 +1,5 @@
 import { Box, Divider, ListItemButton, Typography } from '@mui/material'
+import { Fragment } from 'react'
 
 const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
 
@@ -7,10 +8,11 @@ const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
   }
 
   return (<>
-    {movieLists.map((movie) => {
+    {movieLists.map((movie,index) => {
       return (
         <>
           <ListItemButton
+            data-testid={`list-item-button-${index}`}
             style={{
               backgroundColor: `${selectedRow && selectedRow.episode_id === movie.episode_id ? '#361c1c' : 'white'}`,
               color: `${selectedRow && selectedRow.episode_id === movie.episode_id ? 'white' : 'black'}`
@@ -21,7 +23,7 @@ const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
                 <Typography variant="caption"   >
                   EPISODE {movie?.episode_id}
                 </Typography>
-                <Typography variant="subtitle1"  ml={5} >
+                <Typography variant="subtitle1" ml={5} >
                   {movie?.title}
                 </Typography>
               </Box>
@@ -31,13 +33,11 @@ const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
                 </Typography>
               </Box>
             </Box>
-        </ListItemButton>
-        <Divider />
+          </ListItemButton>
+          <Divider />
         </>
-  )
-
+      )
     })
-
     }
   </>
   )

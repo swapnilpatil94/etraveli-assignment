@@ -28,6 +28,7 @@ const Filters = ({handleSorting, handleInputSearch}) => {
             value={sortBy}
             label="SortBy..."
             onChange={handleSortBy}
+            data-testid={`year`}
           >
              <MenuItem value={'episode'}>Episode</MenuItem>
             <MenuItem value={'year'}>Year</MenuItem>
