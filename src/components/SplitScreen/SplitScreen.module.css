@@ -1,0 +1,26 @@
+.splitScreen {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(186, 184, 184);
+}
+
+.height {
+  height: 50vw;
+	padding: 1vh;
+	overflow: auto;
+}
+
+.leftPane {
+  flex: 1;
+}
+
+.RightPane {
+  flex: 1;
+  border-left: 1px solid rgb(195, 190, 190);
+}
+
+@media (max-width: 800px) {
+  .splitScreen {
+    flex-direction: column;
+  }
+}
