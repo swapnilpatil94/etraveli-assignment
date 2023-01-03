@@ -10,14 +10,16 @@ const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
   return (<>
     {movieLists.map((movie,index) => {
       return (
-        <>
+        <Box
+        key={movie.episode_id} 
+        >
           <ListItemButton
             data-testid={`list-item-button-${index}`}
             style={{
               backgroundColor: `${selectedRow && selectedRow.episode_id === movie.episode_id ? '#361c1c' : 'white'}`,
               color: `${selectedRow && selectedRow.episode_id === movie.episode_id ? 'white' : 'black'}`
             }}
-            key={movie.episode_id} onClick={() => handleChange(movie)} >
+            onClick={() => handleChange(movie)} >
             <Box display={'flex'} justifyContent={'space-between'} width={'100%'} textAlign={'center'}>
               <Box display={'flex'} alignSelf={'flex-start'}>
                 <Typography variant="caption"   >
@@ -35,7 +37,9 @@ const MovieList = ({ movieLists, handleSelectedMovie, selectedRow }) => {
             </Box>
           </ListItemButton>
           <Divider />
-        </>
+        </Box>
+
+          
       )
     })
     }
